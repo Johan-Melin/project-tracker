@@ -1,21 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --column-bg: #f9fafb;
-  --border: #e5e7eb;
-  --card-bg: #fbfbfb;
-  --card-bg-hover: #eee;
+  --background: #f8fafc;
+  --foreground: #22223b;
+  --column-bg: #ffffff;
+  --card-bg: #f1f5f9;
+  --border: #e2e8f0;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --column-bg: #13171f;
-  --border: #3a3f4b;
-  --card-bg: #23272f;
-  --card-bg-hover: #3a3f4b;
+  --background: #181926;
+  --foreground: #f8fafc;
+  --column-bg: #23263a;
+  --card-bg: #23263a;
+  --border: #35384a;
 }
 
 * {
@@ -36,15 +34,15 @@ body {
 .card {
   background-color: var(--card-bg);
   &:hover {
-    background-color: var(--card-bg-hover);
+    background-color: var(--border);
   }
 }
 
 .bevel-toggle {
   background-color: var(--card-bg);
-  box-shadow: 2px 2px 8px var(--border), -2px -2px 8px var(--card-bg-hover);
+  box-shadow: 2px 2px 8px var(--border), -2px -2px 8px var(--border);
   &:hover {
-    background-color: var(--card-bg-hover);
+    background-color: var(--border);
   }
 }
 
