@@ -8,6 +8,13 @@ interface DraggableListProps<T> {
   type?: string;
 }
 
+export function reorderArray<T>(arr: T[], from: number, to: number): T[] {
+  const updated = [...arr];
+  const [removed] = updated.splice(from, 1);
+  updated.splice(to, 0, removed);
+  return updated;
+}
+
 export function DraggableList<T>({
   items,
   renderItem,

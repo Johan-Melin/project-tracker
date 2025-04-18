@@ -6,7 +6,7 @@ interface ColumnProps {
   column: ColumnType;
 }
 
-import { DraggableList } from "./DraggableList";
+import { DraggableList, reorderArray } from "./DraggableList";
 
 const Column: React.FC<ColumnProps> = ({ column }) => {
   const [cards, setCards] = React.useState(column.cards);
@@ -17,12 +17,7 @@ const Column: React.FC<ColumnProps> = ({ column }) => {
   }, [column.cards]);
 
   const reorderCards = (from: number, to: number) => {
-    setCards(prev => {
-      const updated = [...prev];
-      const [removed] = updated.splice(from, 1);
-      updated.splice(to, 0, removed);
-      return updated;
-    });
+    setCards(prev => reorderArray(prev, from, to));
   };
 
   return (

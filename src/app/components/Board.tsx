@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Column from "./Column";
-import { DraggableList } from "./DraggableList";
+import { DraggableList, reorderArray } from "./DraggableList";
 
 export type CardType = {
   id: string;
@@ -42,14 +42,8 @@ const initialBoard: ColumnType[] = [
 const Board: React.FC = () => {
   const [columns, setColumns] = useState<ColumnType[]>(initialBoard);
 
-  // Handler to reorder columns
   const reorderColumns = (from: number, to: number) => {
-    setColumns(prev => {
-      const updated = [...prev];
-      const [removed] = updated.splice(from, 1);
-      updated.splice(to, 0, removed);
-      return updated;
-    });
+    setColumns(prev => reorderArray(prev, from, to));
   };
 
   return (
