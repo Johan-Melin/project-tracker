@@ -7,7 +7,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ card }) => {
   return (
-    <div className="bg-white rounded p-3 shadow border mb-2 cursor-pointer hover:bg-gray-100 transition">
+    <div className="bg-white dark:bg-gray-800 rounded p-3 shadow-lg border border-gray-300 dark:border-gray-700 mb-2 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition text-gray-800 dark:text-gray-100">
       {card.content}
     </div>
   );
